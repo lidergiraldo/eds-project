@@ -14,8 +14,9 @@
     "build:json:filters": "merge-json-cli -i \"models/_component-filters.json\" -o \"component-filters.json\"",
     "prepare": "husky",
     "build:css": "postcss ./styles/tailwind.css -o ./styles/tailwind.min.css --no-map",
-    "watch:css": "postcss ./styles/tailwind.css -o ./styles/tailwind.min.css --watch --no-map"
-
+    "watch:css": "postcss ./styles/tailwind.css -o ./styles/tailwind.min.css --watch --no-map",
+    "aem-up": "aem up",
+    "dev": "npm-run-all --parallel watch:css aem-up"
   },
   "repository": {
     "type": "git",
