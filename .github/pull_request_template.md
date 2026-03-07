@@ -1,7 +1,38 @@
-Please always provide the [GitHub issue(s)](../issues) your PR is for, as well as test URLs where your change can be observed (before and after):
+## Description
 
-Fix #<gh-issue-id>
+Provide a clear and concise description of the changes implemented.
 
-Test URLs:
-- Before: https://main--{repo}--{owner}.aem.live/
-- After: https://<branch>--{repo}--{owner}.aem.live/
+Fix #<issue-id>
+
+---
+
+## Changes Implemented
+
+- 
+- 
+- 
+
+---
+
+## Test URLs
+
+Please provide URLs where the change can be validated.
+
+**Before**
+- https://main--{repo}--{owner}.aem.live/
+
+**After**
+- https://<branch>--{repo}--{owner}.aem.live/
+
+---
+
+## Screenshots / Recordings (if applicable)
+
+Add screenshots or videos to help reviewers understand the changes.
+
+---
+
+
+## Notes for Reviewers (optional)
+
+Add any additional information that could help reviewers understand the change.
