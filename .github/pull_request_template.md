@@ -19,10 +19,10 @@ Fix #<issue-id>
 Please provide URLs where the change can be validated.
 
 **Before**
-- https://main--{repo}--{owner}.aem.live/
+- https://development--eds-project--lidergiraldo.aem.live/
 
 **After**
-- https://<branch>--{repo}--{owner}.aem.live/
+- https://<branch>--eds-project--lidergiraldo.aem.live/
 
 ---
 
