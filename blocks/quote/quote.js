@@ -1,7 +1,7 @@
-import { moveInstrumentation } from '../../scripts/scripts.js';
-
 export default function decorate(block) {
-  console.log('decorate quote', block);
-  const isAuthorEnv = window.xwalk?.isAuthorEnv;
-  console.log('isAuthorEnv', isAuthorEnv);
+  const [quoteWrapper] = block.children;
+
+  const blockquote = document.createElement('blockquote');
+  blockquote.textContent = quoteWrapper.textContent.trim();
+  quoteWrapper.replaceChildren(blockquote);
 }
