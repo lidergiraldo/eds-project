@@ -109,6 +109,17 @@ async function loadEager(doc) {
   }
 }
 
+function loadTailwind() {
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = `${window.hlx.codeBasePath}/styles/tailwind.min.css`;
+  link.media = 'print';
+  link.onload = () => {
+    link.media = 'all';
+  };
+  document.head.appendChild(link);
+}
+
 /**
  * Loads everything that doesn't need to be delayed.
  * @param {Element} doc The container element
@@ -127,6 +138,7 @@ async function loadLazy(doc) {
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();
+  loadTailwind();
 }
 
 /**
