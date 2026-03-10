@@ -1,0 +1,298 @@
+/* design-system.css */
+
+.design-system-wrapper {
+  --ds-sidebar-width: 260px;
+
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+/* ─── Sidebar ──────────────────────────────────────────────── */
+.ds-sidebar {
+  width: var(--ds-sidebar-width);
+  min-height: 100vh;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease;
+}
+
+.ds-sidebar::-webkit-scrollbar { width: 4px; }
+.ds-sidebar::-webkit-scrollbar-thumb { background: var(--color-border-2); border-radius: 2px; }
+
+/* Logo */
+.ds-sidebar-logo {
+  padding: 24px 20px 20px;
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.ds-sidebar-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ds-sidebar-mark {
+  width: 34px;
+  height: 34px;
+  background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-accent));
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 13px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.ds-sidebar-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.ds-sidebar-sub {
+  font-size: 10px;
+  color: var(--color-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.ds-sidebar-version {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 2px 8px;
+  background: rgba(108, 99, 255, 0.1);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  border-radius: 9999px;
+  font-size: 10px;
+  color: var(--color-brand-primary-hover);
+  font-weight: 600;
+}
+
+/* Nav sections */
+.ds-nav-section {
+  padding: 16px 20px 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted-2);
+}
+
+.ds-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px;
+  color: var(--color-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: all 0.15s;
+}
+
+.ds-nav-item:hover {
+  color: var(--color-text);
+  background: var(--color-surface-2);
+  border-left-color: var(--color-border-2);
+  text-decoration: none;
+}
+
+.ds-nav-item.active {
+  color: var(--color-brand-primary-hover);
+  background: rgba(108, 99, 255, 0.07);
+  border-left-color: var(--color-brand-primary);
+}
+
+.ds-nav-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentcolor;
+  opacity: 0.5;
+  flex-shrink: 0;
+}
+
+.ds-nav-badge {
+  margin-left: auto;
+  padding: 1px 7px;
+  border-radius: 9999px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.ds-nav-badge.atom {
+  background: rgba(108, 99, 255, 0.12);
+  color: var(--color-brand-primary-hover);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.ds-nav-badge.mol {
+  background: rgba(255, 179, 71, 0.1);
+  color: var(--color-feedback-warn);
+  border: 1px solid rgba(255, 179, 71, 0.2);
+}
+
+.ds-nav-badge.block {
+  background: rgba(255, 107, 107, 0.1);
+  color: var(--color-brand-secondary);
+  border: 1px solid rgba(255, 107, 107, 0.2);
+}
+
+/* ─── Main content ─────────────────────────────────────────── */
+.ds-main {
+  margin-left: var(--ds-sidebar-width);
+  flex: 1;
+  min-height: 100vh;
+}
+
+.ds-content {
+  max-width: 1080px;
+  padding: 48px 52px;
+}
+
+/* ─── Page header ──────────────────────────────────────────── */
+.ds-page-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ds-page-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  background: rgba(108, 99, 255, 0.12);
+  color: var(--color-brand-primary-hover);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.ds-page-title {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+  margin: 0 0 10px;
+  color: var(--color-text);
+}
+
+.ds-page-desc {
+  font-size: 15px;
+  color: var(--color-muted);
+  max-width: 600px;
+  line-height: 1.75;
+  margin: 0 0 40px;
+}
+
+/* ─── Loading ──────────────────────────────────────────────── */
+.ds-loading {
+  padding: 48px 52px;
+  color: var(--color-muted);
+  font-size: 13px;
+}
+
+/* ─── Mobile toggle ────────────────────────────────────────── */
+.ds-mobile-bar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  z-index: 60;
+}
+
+.ds-mobile-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ds-toggle-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.ds-toggle-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.ds-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+}
+
+/* ─── Responsive ───────────────────────────────────────────── */
+@media (width < 900px) {
+  .ds-mobile-bar { display: flex; }
+
+  .ds-sidebar {
+    transform: translateX(-100%);
+    top: 56px;
+  }
+
+  .ds-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .ds-overlay.open {
+    display: block;
+  }
+
+  .ds-main {
+    margin-left: 0;
+    padding-top: 56px;
+  }
+
+  .ds-content {
+    padding: 24px 16px;
+  }
+}
