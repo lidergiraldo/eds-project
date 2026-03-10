@@ -128,7 +128,7 @@
           }
         },
         {
-          "title": "Button",
+          "title": "custom-button",
           "id": "custom-button",
           "plugins": {
             "xwalk": {
