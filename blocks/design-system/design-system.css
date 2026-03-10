@@ -1,7 +1,12 @@
 /* design-system.css */
+main > .section:has(.design-system) > div {
+  max-width: unset;
+  margin: unset;
+  padding: unset;
+}
 
 .design-system-wrapper {
-  --ds-sidebar-width: 260px;
+  --ds-sidebar-width: 270px;
 
   display: flex;
   min-height: 100vh;

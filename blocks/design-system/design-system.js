@@ -80,7 +80,7 @@ async function loadSection(contentArea, pathname) {
   contentArea.innerHTML = '<div class="ds-loading">Loading...</div>';
 
   try {
-    const module = await import(`./${modulePath}.sample.js`);
+    const module = await import(`/design-system/${modulePath}.sample.js`);
     contentArea.innerHTML = '';
     module.default(contentArea);
   } catch {
@@ -108,10 +108,10 @@ function buildSidebar() {
         <div class="ds-sidebar-mark">DS</div>
         <div>
           <div class="ds-sidebar-title">Design System</div>
-          <div class="ds-sidebar-sub">EDS + XWalk</div>
+          <div class="ds-sidebar-sub">AEM Edge Delivery Service</div>
         </div>
       </div>
-      <div class="ds-sidebar-version">v1.0 · AEM EDS</div>
+      <div class="ds-sidebar-version">adobe/aem-boilerplate</div>
     </div>
   `;
 
