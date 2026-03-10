@@ -177,7 +177,7 @@ function buildMobileBar(sidebar, overlay) {
 
 export default function decorate(block) {
   block.innerHTML = '';
-  block.classList.add('design-system-wrapper');
+  /* block.classList.add('design-system-wrapper'); */
 
   const overlay = document.createElement('div');
   overlay.className = 'ds-overlay';
