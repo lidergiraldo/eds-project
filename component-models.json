@@ -186,6 +186,140 @@
     ]
   },
   {
+    "id": "custom-button",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "label",
+        "label": "Label",
+        "value": "",
+        "description": "Visible button text",
+        "required": true
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href",
+        "label": "URL",
+        "value": "",
+        "description": "Destination URL. Accepts internal paths (/about) and external URLs (https://…)"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "variant",
+        "label": "Variant",
+        "value": "primary",
+        "description": "Visual style of the button",
+        "options": [
+          {
+            "name": "Primary",
+            "value": "primary"
+          },
+          {
+            "name": "Secondary",
+            "value": "secondary"
+          },
+          {
+            "name": "Ghost",
+            "value": "ghost"
+          },
+          {
+            "name": "Danger",
+            "value": "danger"
+          },
+          {
+            "name": "Accent",
+            "value": "accent"
+          },
+          {
+            "name": "Info",
+            "value": "info"
+          },
+          {
+            "name": "Link",
+            "value": "link"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "size",
+        "label": "Size",
+        "value": "md",
+        "description": "Button size",
+        "options": [
+          {
+            "name": "X-Small",
+            "value": "xs"
+          },
+          {
+            "name": "Small",
+            "value": "sm"
+          },
+          {
+            "name": "Medium",
+            "value": "md"
+          },
+          {
+            "name": "Large",
+            "value": "lg"
+          },
+          {
+            "name": "X-Large",
+            "value": "xl"
+          }
+        ]
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "target",
+        "label": "Target",
+        "value": "_self",
+        "description": "Link behaviour on click",
+        "options": [
+          {
+            "name": "Same tab",
+            "value": "_self"
+          },
+          {
+            "name": "New tab",
+            "value": "_blank"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "icon",
+        "label": "Icon",
+        "value": "",
+        "description": "SVG icon name from /icons/ without extension (e.g. arrow-right)"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "iconPosition",
+        "label": "Icon Position",
+        "value": "left",
+        "description": "Icon position relative to the label",
+        "options": [
+          {
+            "name": "Left",
+            "value": "left"
+          },
+          {
+            "name": "Right",
+            "value": "right"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
