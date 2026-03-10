@@ -1,8 +1,7 @@
 /* design-system.css */
-main > .section:has(.design-system) > div {
-  max-width: unset;
-  margin: unset;
-  padding: unset;
+.design-system-container .design-system-wrapper {
+    max-width: unset;
+    padding: 0;
 }
 
 .design-system-wrapper {
