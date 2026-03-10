@@ -9,7 +9,6 @@ main > .section:has(.design-system) > div {
   --ds-sidebar-width: 270px;
 
   display: flex;
-  min-height: 100vh;
   background: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
@@ -18,7 +17,6 @@ main > .section:has(.design-system) > div {
 /* ─── Sidebar ──────────────────────────────────────────────── */
 .ds-sidebar {
   width: var(--ds-sidebar-width);
-  min-height: 100vh;
   background: var(--color-surface);
   border-right: 1px solid var(--color-border);
   position: fixed;
@@ -169,7 +167,6 @@ main > .section:has(.design-system) > div {
 .ds-main {
   margin-left: var(--ds-sidebar-width);
   flex: 1;
-  min-height: 100vh;
 }
 
 .ds-content {
