@@ -40,7 +40,7 @@
       "title": "Development",
       "id": "development",
       "components": [
-        { "...": "../dev/*/_*.json#/definitions" }
+        { "...": "./_design-system.json#/definitions" }
       ]
     }
   ]

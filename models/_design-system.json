@@ -3,7 +3,6 @@
     {
       "title": "Design System",
       "id": "design-system",
-      "group": "development",
       "plugins": {
         "xwalk": {
           "page": {
