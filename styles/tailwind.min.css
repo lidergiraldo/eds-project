@@ -13,10 +13,19 @@
       --default-mono-font-family: var(--font-mono);
       --color-brand-primary: #6c63ff;
       --color-brand-primary-hover: #8b84ff;
+      --color-brand-secondary: #ff6b6b;
+      --color-brand-accent: #00d9a3;
+      --color-feedback-warn: #ffb347;
       --color-bg: #0b0b0e;
+      --color-surface: #13131a;
       --color-surface-2: #1a1a24;
+      --color-border: #252530;
+      --color-border-2: #32323f;
       --color-text: #eeeef5;
       --color-muted: #65657a;
+      --color-muted-2: #4a4a5e;
+      --font-display: syne, syne-fallback, sans-serif;
+      --font-body: dm-sans, dm-sans-fallback, sans-serif;
     }
   }
   @layer base {
@@ -170,6 +179,9 @@
   @layer utilities {
     .collapse {
       visibility: collapse;
+    }
+    .relative {
+      position: relative;
     }
     .start {
       inset-inline-start: var(--spacing);
