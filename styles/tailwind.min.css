@@ -9,6 +9,8 @@
       --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
       --spacing: 0.25rem;
+      --default-transition-duration: 150ms;
+      --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       --default-font-family: var(--font-sans);
       --default-mono-font-family: var(--font-mono);
       --color-brand-primary: #6c63ff;
@@ -16,9 +18,11 @@
       --color-brand-secondary: #ff6b6b;
       --color-brand-accent: #00d9a3;
       --color-feedback-warn: #ffb347;
+      --color-feedback-info: #38bdf8;
       --color-bg: #0b0b0e;
       --color-surface: #13131a;
       --color-surface-2: #1a1a24;
+      --color-surface-3: #202030;
       --color-border: #252530;
       --color-border-2: #32323f;
       --color-text: #eeeef5;
@@ -26,6 +30,7 @@
       --color-muted-2: #7a7a94;
       --font-display: syne, syne-fallback, sans-serif;
       --font-body: dm-sans, dm-sans-fallback, sans-serif;
+      --font-code: fira-code, fira-code-fallback, monospace;
     }
   }
   @layer base {
@@ -213,6 +218,9 @@
     .contents {
       display: contents;
     }
+    .flex {
+      display: flex;
+    }
     .hidden {
       display: none;
     }
@@ -242,6 +250,11 @@
     }
     .filter {
       filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+    }
+    .transition {
+      transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+      transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+      transition-duration: var(--tw-duration, var(--default-transition-duration));
     }
   }
 }
