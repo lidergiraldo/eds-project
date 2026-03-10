@@ -10,6 +10,7 @@ import {
   loadSection,
   loadSections,
   loadCSS,
+  getMetadata,
 } from './aem.js';
 
 /**
@@ -109,6 +110,10 @@ async function loadEager(doc) {
   }
 }
 
+/**
+ * Loads the Tailwind CSS stylesheet dynamically and appends it to the document head.
+ * Uses print media initially to prevent render-blocking, then switches to all media on load.
+ */
 function loadTailwind() {
   const link = document.createElement('link');
   link.rel = 'stylesheet';
@@ -125,7 +130,11 @@ function loadTailwind() {
  * @param {Element} doc The container element
  */
 async function loadLazy(doc) {
-  loadHeader(doc.querySelector('header'));
+  const template = getMetadata('template');
+  if (template !== 'design-system') {
+    loadHeader(doc.querySelector('header'));
+    loadFooter(doc.querySelector('footer'));
+  }
 
   const main = doc.querySelector('main');
   await loadSections(main);
@@ -133,8 +142,6 @@ async function loadLazy(doc) {
   const { hash } = window.location;
   const element = hash ? doc.getElementById(hash.substring(1)) : false;
   if (hash && element) element.scrollIntoView();
-
-  loadFooter(doc.querySelector('footer'));
 
   loadCSS(`${window.hlx.codeBasePath}/styles/lazy-styles.css`);
   loadFonts();

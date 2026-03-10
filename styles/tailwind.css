@@ -1,1 +1,34 @@
 @import "tailwindcss" layer(utilities);
+
+@theme {
+
+  /* ─── Colors — Brand ───────────────────────────────────── */
+  --color-brand-primary: #6c63ff;
+  --color-brand-primary-hover: #8b84ff;
+  --color-brand-secondary: #ff6b6b;
+  --color-brand-accent: #00d9a3;
+
+  /* ─── Colors — Feedback ────────────────────────────────── */
+  --color-feedback-warn: #ffb347;
+  --color-feedback-info: #38bdf8;
+
+  /* ─── Colors — Surfaces ────────────────────────────────── */
+  --color-bg: #0b0b0e;
+  --color-surface: #13131a;
+  --color-surface-2: #1a1a24;
+  --color-surface-3: #202030;
+
+  /* ─── Colors — Borders ─────────────────────────────────── */
+  --color-border: #252530;
+  --color-border-2: #32323f;
+
+  /* ─── Colors — Text ────────────────────────────────────── */
+  --color-text: #eeeef5;
+  --color-muted: #8e8ea8;
+  --color-muted-2: #7a7a94;
+
+  /* ─── Typography — Families ─────────────────────────────── */
+  --font-display: syne, syne-fallback, sans-serif;
+  --font-body: dm-sans, dm-sans-fallback, sans-serif;
+  --font-code: fira-code, fira-code-fallback, monospace;
+}

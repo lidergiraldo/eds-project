@@ -35,6 +35,13 @@
           "...": "../blocks/*/_*.json#/definitions"
         }
       ]
+    },
+    {
+      "title": "Development",
+      "id": "development",
+      "components": [
+        { "...": "./_design-system.json#/definitions" }
+      ]
     }
   ]
 }
