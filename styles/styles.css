@@ -152,8 +152,9 @@ a:hover {
   text-decoration: underline;
 }
 
+/* stylelint-disable */
 /* buttons */
-a.button:any-link,
+/* a.button:any-link,
 button {
   box-sizing: border-box;
   display: inline-block;
@@ -174,28 +175,28 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
+} */
 
-a.button:hover,
+/* a.button:hover,
 a.button:focus,
 button:hover,
 button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
-}
+} */
 
-button:disabled,
+/* button:disabled,
 button:disabled:hover {
   background-color: var(--light-color);
   cursor: unset;
-}
+} */
 
-a.button.secondary,
+/* a.button.secondary,
 button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color);
-}
+} */
 
 main img {
   max-width: 100%;

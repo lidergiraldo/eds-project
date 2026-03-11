@@ -7,18 +7,6 @@ import { Button } from './button.js';
 
 const html = htm.bind(h);
 
-// ─── Sección wrapper ──────────────────────────────────────
-function ButtonSection({ title, description, children }) {
-  return html`
-    <div class="ds-section">
-      <h3 class="ds-section-title">${title}</h3>
-      ${description && html`<p class="ds-section-desc">${description}</p>`}
-      <div class="ds-preview">${children}</div>
-    </div>
-  `;
-}
-
-// ─── Página principal ─────────────────────────────────────
 function ButtonSample() {
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -31,159 +19,170 @@ function ButtonSample() {
   return html`
     <div class="ds-content">
 
-      <div class="ds-page-eyebrow">
-        <span class="ds-page-tag">Atom</span>
-      </div>
-      <h1 class="ds-page-title">Button</h1>
-      <p class="ds-page-desc">
-        Átomo base para todas las acciones del sistema. Soporta variantes,
-        tamaños, iconos, estados de carga y renderiza como <code>&lt;a&gt;</code>
-        cuando recibe <code>href</code>.
+      <div class="sec-eyebrow"><span class="sec-eyebrow-tag">Atom</span></div>
+      <h1 class="sec-title">Button</h1>
+      <p class="sec-desc">
+        El átomo más reutilizado del sistema. Se crea una vez en
+        <code class="inline">design-system/atoms/button/button.js</code>
+        y lo usan 9 bloques distintos.
       </p>
 
-      <!-- Interactivo -->
-      <${ButtonSection}
-        title="Interactivo"
-        description="Prueba el estado y el onClick en acción."
-      >
-        <div class="ds-row" style="align-items:center;gap:1rem">
-          <${Button}
-            label=${count === 0 ? 'Clickéame' : `Clicks: ${count}`}
-            variant="primary"
-            onClick=${() => setCount(count + 1)}
-          />
-          <${Button}
-            label=${loading ? 'Procesando...' : 'Simular async'}
-            variant="secondary"
-            loading=${loading}
-            onClick=${handleAsync}
-          />
-          <${Button}
-            label="Reset"
-            variant="ghost"
-            onClick=${() => setCount(0)}
-          />
-        </div>
-      <//>
+      <div class="uses-atoms-bar mb-16">
+        <span class="uses-label">Usa tokens</span>
+        <span class="atom-pill ap-token">--color-brand-primary</span>
+        <span class="atom-pill ap-token">--color-brand-primary-hover</span>
+        <span class="atom-pill ap-token">--color-brand-secondary</span>
+        <span class="atom-pill ap-token">--color-brand-accent</span>
+        <span class="atom-pill ap-token">--color-feedback-info</span>
+        <span class="atom-pill ap-token">--color-border</span>
+        <span class="atom-pill ap-token">--color-muted</span>
+        <span class="atom-pill ap-token">--color-surface-2</span>
+        <span class="atom-pill ap-token">--color-text</span>
+        <span class="atom-pill ap-token">--color-bg</span>
+        <span class="atom-pill ap-token">--r-xl</span>
+        <span class="atom-pill ap-token">--spacing-*</span>
+        <span class="atom-pill ap-token">--font-semibold</span>
+        <span class="atom-pill ap-token">--transition-200</span>
+      </div>
 
-      <!-- Variantes -->
-      <${ButtonSection}
-        title="Variantes"
-        description="Cada variante comunica un nivel de énfasis diferente."
-      >
-        <div class="ds-row">
-          <${Button} label="Primary"   variant="primary"   />
-          <${Button} label="Secondary" variant="secondary" />
-          <${Button} label="Ghost"     variant="ghost"     />
-          <${Button} label="Danger"    variant="danger"    />
-          <${Button} label="Accent"    variant="accent"    />
-          <${Button} label="Info"      variant="info"      />
-          <${Button} label="Link"      variant="link"      />
+      <div class="preview mb-16">
+        <div class="preview-bar">
+          <span class="preview-label">Interactivo</span>
+          <span class="preview-file">button.js</span>
         </div>
-      <//>
-
-      <!-- Tamaños -->
-      <${ButtonSection}
-        title="Tamaños"
-        description="Cinco tamaños disponibles para cada contexto de UI."
-      >
-        <div class="ds-row ds-row--align-center">
-          <${Button} label="XSmall" size="xs" />
-          <${Button} label="Small"  size="sm" />
-          <${Button} label="Medium" size="md" />
-          <${Button} label="Large"  size="lg" />
-          <${Button} label="XLarge" size="xl" />
+        <div class="preview-body">
+          <div class="preview-row">
+            <${Button}
+              label=${count === 0 ? 'Clickéame' : `Clicks: ${count}`}
+              variant="primary"
+              onClick=${() => setCount(count + 1)}
+            />
+            <${Button}
+              label=${loading ? 'Procesando...' : 'Simular async'}
+              variant="secondary"
+              loading=${loading}
+              onClick=${handleAsync}
+            />
+            <${Button} label="Reset" variant="ghost" onClick=${() => setCount(0)} />
+          </div>
         </div>
-      <//>
+      </div>
 
-      <!-- Disabled -->
-      <${ButtonSection}
-        title="Estado Disabled"
-        description="Todas las variantes soportan el estado deshabilitado."
-      >
-        <div class="ds-row">
-          <${Button} label="Primary"   variant="primary"   disabled=${true} />
-          <${Button} label="Secondary" variant="secondary" disabled=${true} />
-          <${Button} label="Ghost"     variant="ghost"     disabled=${true} />
-          <${Button} label="Danger"    variant="danger"    disabled=${true} />
+      <div class="preview mb-16">
+        <div class="preview-bar">
+          <span class="preview-label">Variants</span>
+          <span class="preview-file">button.js</span>
         </div>
-      <//>
-
-      <!-- Loading -->
-      <${ButtonSection}
-        title="Estado Loading"
-        description="Spinner integrado para operaciones asíncronas."
-      >
-        <div class="ds-row">
-          <${Button} label="Guardando..."  variant="primary"   loading=${true} />
-          <${Button} label="Procesando..." variant="secondary" loading=${true} />
-          <${Button} label="Cargando..."   variant="ghost"     loading=${true} />
+        <div class="preview-body">
+          <div class="preview-row">
+            <${Button} label="Primary" variant="primary" />
+            <${Button} label="Secondary" variant="secondary" />
+            <${Button} label="Ghost" variant="ghost" />
+            <${Button} label="Danger" variant="danger" />
+            <${Button} label="Accent" variant="accent" />
+            <${Button} label="Info" variant="info" />
+            <${Button} label="Link" variant="link" />
+          </div>
         </div>
-      <//>
+      </div>
 
-      <!-- Como enlace -->
-      <${ButtonSection}
-        title="Como enlace"
-        description="Renderiza un <a> cuando recibe href."
-      >
-        <div class="ds-row">
-          <${Button} label="Ir al inicio"       href="/"                 variant="primary"   />
-          <${Button} label="Abrir en nueva tab" href="https://adobe.com" variant="secondary" target="_blank" />
-          <${Button} label="Ver docs"           href="/docs"             variant="link"      />
+      <div class="preview mb-16">
+        <div class="preview-bar">
+          <span class="preview-label">Sizes</span>
         </div>
-      <//>
-
-      <!-- Con icono -->
-      <${ButtonSection}
-        title="Con icono"
-        description="Icono a la izquierda o derecha del label."
-      >
-        <div class="ds-row">
-          <${Button} label="Icon Left"  variant="primary"   icon="arrow-right" iconPosition="left"  />
-          <${Button} label="Icon Right" variant="secondary" icon="arrow-right" iconPosition="right" />
-          <${Button} label="Ghost Icon" variant="ghost"     icon="arrow-right" iconPosition="left"  />
+        <div class="preview-body">
+          <div class="preview-row" style="align-items:flex-end">
+            <${Button} label="X-Small" size="xs" />
+            <${Button} label="Small" size="sm" />
+            <${Button} label="Medium" size="md" />
+            <${Button} label="Large" size="lg" />
+            <${Button} label="X-Large" size="xl" />
+          </div>
         </div>
-      <//>
+      </div>
 
-      <!-- Props table -->
-      <h2 class="ds-section-title" style="margin-top:3rem">Props</h2>
-      <table class="ds-props-table">
-        <thead>
-          <tr>
-            <th>Prop</th>
-            <th>Tipo</th>
-            <th>Default</th>
-            <th>Descripción</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${[
-            ['label', 'string', '—',       'Texto visible del botón'],
-            ['href', 'string',                                                       'null',    'Renderiza <a> cuando se provee'],
-            ['variant', 'primary | secondary | ghost | danger | accent | info | link', 'primary', 'Estilo visual'],
-            ['size', 'xs | sm | md | lg | xl',                                      'md',      'Tamaño del botón'],
-            ['target', '_self | _blank',                                              '_self',   'Atributo target (solo con href)'],
-            ['icon', 'string',                                                       'null',    'Nombre del SVG en /icons/'],
-            ['iconPosition', 'left | right',                                                'left',    'Posición del icono'],
-            ['disabled', 'boolean',                                                      'false',   'Estado deshabilitado'],
-            ['loading', 'boolean',                                                      'false',   'Muestra spinner'],
-            ['onClick', 'function',                                                     'null',    'Handler del click'],
-          ].map(([prop, type, def, desc]) => html`
+      <div class="preview mb-16">
+        <div class="preview-bar">
+          <span class="preview-label">States</span>
+        </div>
+        <div class="preview-body">
+          <div class="preview-row">
+            <${Button} label="Default" variant="primary" />
+            <${Button} label="Disabled" variant="primary" disabled=${true} />
+            <${Button} label="Disabled" variant="secondary" disabled=${true} />
+            <${Button} label="Disabled" variant="ghost" disabled=${true} />
+            <${Button} label="Loading" variant="primary" loading=${true} />
+            <${Button} label="Loading" variant="secondary" loading=${true} />
+          </div>
+        </div>
+      </div>
+
+      <div class="preview mb-16">
+        <div class="preview-bar">
+          <span class="preview-label">With icon</span>
+        </div>
+        <div class="preview-body">
+          <div class="preview-row">
+            <${Button} label="Icon Left" variant="primary" icon="arrow-right" iconPosition="left" />
+            <${Button} label="Icon Right" variant="secondary" icon="arrow-right" iconPosition="right" />
+            <${Button} label="Ghost Icon" variant="ghost" icon="arrow-right" iconPosition="left" />
+          </div>
+        </div>
+      </div>
+
+      <div class="preview mb-16">
+        <div class="preview-bar">
+          <span class="preview-label">As link</span>
+        </div>
+        <div class="preview-body">
+          <div class="preview-row">
+            <${Button} label="Ir al inicio" href="/" variant="primary" />
+            <${Button} label="Abrir en nueva tab" href="https://adobe.com" variant="secondary" target="_blank" />
+            <${Button} label="Ver docs" href="/docs" variant="link" />
+          </div>
+        </div>
+      </div>
+
+      <div class="ds-card mb-16">
+        <div class="ds-card-title">Props API</div>
+        <table class="props-table">
+          <thead>
             <tr>
-              <td><code>${prop}</code></td>
-              <td><code>${type}</code></td>
-              <td><code>${def}</code></td>
-              <td>${desc}</td>
+              <th>Prop</th>
+              <th>Type</th>
+              <th>Default</th>
+              <th>Required</th>
+              <th>Description</th>
             </tr>
-          `)}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            ${[
+    ['label', 'string', '—', 'yes', 'Texto visible del botón'],
+    ['href', 'string', 'null', 'no', 'Renderiza <a> cuando se provee'],
+    ['size', "'xs'|'sm'|'md'|'lg'|'xl'", "'md'", 'no', 'Tamaño del botón'],
+    ['target', "'_self'|'_blank'", "'_self'", 'no', 'Atributo target (solo con href)'],
+    ['icon', 'string', 'null', 'no', 'Nombre del SVG en /icons/'],
+    ['iconPosition', "'left'|'right'", "'left'", 'no', 'Posición del icono'],
+    ['disabled', 'boolean', 'false', 'no', 'Estado deshabilitado'],
+    ['loading', 'boolean', 'false', 'no', 'Muestra spinner'],
+    ['onClick', 'function', 'null', 'no', 'Handler del click'],
+  ].map(([prop, type, def, req, desc]) => html`
+              <tr>
+                <td><span class="prop-name">${prop}</span></td>
+                <td><span class="prop-type">${type}</span></td>
+                <td><span class="prop-default">${def}</span></td>
+                <td><span class="prop-required ${req === 'yes' ? 'req-yes' : 'req-no'}">${req}</span></td>
+                <td class="text-muted">${desc}</td>
+              </tr>
+            `)}
+          </tbody>
+        </table>
+      </div>
 
     </div>
   `;
 }
 
-// ─── Entry point ──────────────────────────────────────────
 export default async function render(container) {
   await UI.render(ButtonSample, {})(container);
 }

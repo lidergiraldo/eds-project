@@ -10,7 +10,7 @@ const html = htm.bind(h);
  * @param {string}  props.label
  * @param {string}  [props.href]
  * @param {'primary'|'secondary'|'ghost'|'danger'|'accent'|'info'|'link'} [props.variant='primary']
- * @param {'xs'|'sm'|'md'|'lg'|'xl'} [props.size='md']
+ * @param {'sm'|'md'|'lg'|'xl'} [props.size='md']
  * @param {'_self'|'_blank'} [props.target='_self']
  * @param {string}  [props.icon]
  * @param {'left'|'right'} [props.iconPosition='left']
@@ -35,7 +35,7 @@ export const Button = ({
     primary: {
       container: disabled
         ? '!bg-brand-primary/40 !border-transparent'
-        : '!bg-brand-primary !border-transparent hover:!bg-brand-primary-hover hover:-translate-y-0.5 hover:shadow-[0_0_32px_rgba(108,99,255,0.35)] active:translate-y-0 active:shadow-none',
+        : '!bg-brand-primary !border-brand-primary hover:!bg-brand-primary-hover hover:!border-brand-primary-hover hover:-translate-y-0.5 hover:shadow-[0_8px_32px_rgba(108,99,255,0.3)] active:translate-y-0',
       label: disabled ? '!text-white/40' : '!text-white',
     },
     secondary: {
@@ -47,25 +47,25 @@ export const Button = ({
     ghost: {
       container: disabled
         ? '!bg-transparent !border-border/40'
-        : '!bg-transparent !border-border hover:!bg-surface-2 hover:!border-border-2 hover:-translate-y-0.5 active:translate-y-0',
+        : '!bg-transparent !border-border hover:!bg-surface-2 hover:!border-muted hover:-translate-y-0.5 active:translate-y-0',
       label: disabled ? '!text-text/40' : '!text-text',
-    },
-    danger: {
-      container: disabled
-        ? '!bg-brand-secondary/40 !border-transparent'
-        : '!bg-brand-secondary !border-transparent hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0',
-      label: disabled ? '!text-white/40' : '!text-white',
     },
     accent: {
       container: disabled
         ? '!bg-brand-accent/40 !border-transparent'
-        : '!bg-brand-accent !border-transparent hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0',
-      label: disabled ? '!text-bg/40' : '!text-bg',
+        : '!bg-brand-accent !border-brand-accent hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0',
+      label: disabled ? '!text-bg/40' : '!text-bg !font-bold',
+    },
+    danger: {
+      container: disabled
+        ? '!bg-brand-secondary/40 !border-transparent'
+        : '!bg-brand-secondary !border-brand-secondary hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0',
+      label: disabled ? '!text-white/40' : '!text-white',
     },
     info: {
       container: disabled
         ? '!bg-feedback-info/40 !border-transparent'
-        : '!bg-feedback-info !border-transparent hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0',
+        : '!bg-feedback-info !border-feedback-info hover:brightness-110 hover:-translate-y-0.5 active:translate-y-0',
       label: disabled ? '!text-bg/40' : '!text-bg',
     },
     link: {
@@ -80,11 +80,10 @@ export const Button = ({
 
   // ─── SIZE STYLES ──────────────────────────────────────────
   const sizeStyles = {
-    xs: { container: 'h-8  !px-3 !py-1.5', label: '!text-xs' },
-    sm: { container: 'h-9  !px-4 !py-2', label: '!text-sm' },
-    md: { container: 'h-11 !px-5 !py-2.5', label: '!text-sm' },
-    lg: { container: 'h-13 !px-7 !py-3.5', label: '!text-base' },
-    xl: { container: 'h-14 !px-9 !py-4', label: '!text-base' },
+    sm: { container: '!py-[8px] !px-[16px]', label: '!text-[12.5px]' },
+    md: { container: '!py-[11px] !px-[22px]', label: '!text-[14px]' },
+    lg: { container: '!py-[15px] !px-[32px]', label: '!text-[15px] !font-semibold' },
+    xl: { container: '!py-[18px] !px-[40px]', label: '!text-[16px] !font-semibold' },
   };
 
   const v = variantStyles[variant] ?? variantStyles.primary;

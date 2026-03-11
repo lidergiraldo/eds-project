@@ -1,2 +1,4 @@
 helix-importer-ui
-dompurify.min.js
+scripts/dompurify.min.js
+scripts/htm.js
+scripts/__dropins__/**
