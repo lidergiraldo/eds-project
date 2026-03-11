@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@dropins/tools/*": ["./scripts/__dropins__/tools/*"]
+    }
+  }
+}
