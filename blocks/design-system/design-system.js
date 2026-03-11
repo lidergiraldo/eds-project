@@ -80,7 +80,8 @@ async function loadSection(contentArea, pathname) {
   contentArea.innerHTML = '<div class="ds-loading">Loading...</div>';
 
   try {
-    const module = await import(`/design-system/${modulePath}.sample.js`);
+    const segment = modulePath.split('/').pop();
+    const module = await import(`/design-system/${modulePath}/${segment}.sample.js`);
     contentArea.innerHTML = '';
     module.default(contentArea);
   } catch {
